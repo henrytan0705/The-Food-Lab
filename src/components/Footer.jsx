@@ -14,8 +14,8 @@ const Footer = () => {
         </div>
 
         <div className="text-sm space-y-1">
-          <p>Some St, Some Ave</p>
-          <p>Brooklyn, New York 11223</p>
+          <p>695 Park Ave</p>
+          <p>New York, NY 10065</p>
           <p>(123)-456-7890</p>
           <p>Open: 10am - 8pm</p>
         </div>

@@ -62,6 +62,24 @@ const ContactPage = () => {
               Send Message
             </button>
           </form>
+
+          <div className="mt-12 max-w-4xl mx-auto">
+            <h2 className="text-2xl font-semibold mb-4 text-center">
+              Our Location
+            </h2>
+            <div className="w-full h-[400px] rounded shadow overflow-hidden">
+              <iframe
+                title="The Food Lab Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.943846870181!2d-73.967104!3d40.7678438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258eb899f0889%3A0xb5e90aa7d877ee1f!2sHunter%20College!5e0!3m2!1sen!2sus!4v1718669900000!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </section>
     </div>
