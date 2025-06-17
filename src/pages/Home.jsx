@@ -1,18 +1,22 @@
 import React from "react";
 import Hero from "../components/Hero";
 import HomeImage from "../assets/images/heroes/home.jpg";
-import Fries from "../assets/images/gallery/fries.jpg";
-import Tartare from "../assets/images/gallery/tartare.jpg";
-import Carbonara from "../assets/images/gallery/carbonara.jpg";
-import Bibimbamp from "../assets/images/gallery/bibimbap.jpg";
-import Cake from "../assets/images/gallery/cake.jpg";
-import Cheesecake from "../assets/images/gallery/cheesecake.jpg";
+import Fries from "../assets/images/gallery/Fries.jpg";
+import Tartare from "../assets/images/gallery/Tartare.jpg";
+import Carbonara from "../assets/images/gallery/Carbonara.jpg";
+import Bibimbamp from "../assets/images/gallery/Bibimbap.jpg";
+import Cake from "../assets/images/gallery/Cake.jpg";
+import Chicken from "../assets/images/gallery/Chicken.jpg";
 
 const HomePage = () => {
   const galleryItems = [
     {
       src: Fries,
       alt: "Lab Fries",
+    },
+    {
+      src: Chicken,
+      alt: "Sous-Vide FriedChicken",
     },
     {
       src: Tartare,
@@ -30,14 +34,10 @@ const HomePage = () => {
       src: Cake,
       alt: "Matcha Lava Cake",
     },
-    {
-      src: Cheesecake,
-      alt: "Ube Cheesecake",
-    },
   ];
 
   return (
-    <div className="h-screen w-screen">
+    <div className="w-screen">
       <Hero src={HomeImage}>
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
           TᕼE ᖴOOᗪ ᒪᗩᗷ

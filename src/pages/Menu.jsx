@@ -58,7 +58,7 @@ const MenuPage = () => {
   };
 
   return (
-    <div className="h-screen w-screen">
+    <div className="w-screen">
       <Hero src={MenuImage}>
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
           ᗰEᑎᑌ

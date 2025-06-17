@@ -4,55 +4,56 @@ import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-white shadow-md bottom-0 left-0 right-0 z-50">
-      <div className="flex-col">
-        <p className="mb-4 text-sm text-gray-900">
-          &copy; 2025 The Food Lab. All rights reserved.
-        </p>
-        <div className="flex space-x-6 justify-center">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-          >
-            <FaFacebookF className="text-xl hover:text-blue-500 transition-colors" />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <FaInstagram className="text-xl hover:text-pink-500 transition-colors" />
-          </a>
-          <a
-            href="https://x.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="X"
-          >
-            <FaXTwitter className="text-xl hover:text-gray-400 transition-colors" />
-          </a>
-        </div>
-
-        <div className="">
-          <div className="text-gray-900">
-            <p>Some St, Some Ave,</p>
-            <p>Brooklyn, New York</p>
-            <p>11223</p>
-          </div>
-          <div className="text-gray-900">(123)-456-7890</div>
-          <div className="text-gray-900">10 am - 8 pm</div>
-        </div>
-
+    <footer className="bg-gray-900 text-white py-8">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-6 md:space-y-0">
         <div>
-          <Link
-            to="/contact"
-            className="text-gray-700 hover:text-red-500 transition"
-          >
-            Contact
-          </Link>
+          <h2 className="text-2xl font-bold tracking-wide">TᕼE ᖴOOᗪ ᒪᗩᗷ</h2>
+          <p className="text-sm mt-2">
+            &copy; 2025 The Food Lab. All rights reserved.
+          </p>
+        </div>
+
+        <div className="text-sm space-y-1">
+          <p>Some St, Some Ave</p>
+          <p>Brooklyn, New York 11223</p>
+          <p>(123)-456-7890</p>
+          <p>Open: 10am - 8pm</p>
+        </div>
+
+        <div className="flex flex-col items-center space-y-3">
+          <div className="space-x-4">
+            <Link to="/" className="hover:text-red-400">
+              Home
+            </Link>
+            <Link to="/about" className="hover:text-red-400">
+              About
+            </Link>
+            <Link to="/menu" className="hover:text-red-400">
+              Menu
+            </Link>
+            <Link to="/contact" className="hover:text-red-400">
+              Contact
+            </Link>
+          </div>
+          <div className="flex space-x-4 mt-2">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF className="text-xl hover:text-blue-400 transition-colors" />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="text-xl hover:text-pink-400 transition-colors" />
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer">
+              <FaXTwitter className="text-xl hover:text-gray-400 transition-colors" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>

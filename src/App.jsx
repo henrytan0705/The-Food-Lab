@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <BrowserRouter>
+      {/* <div className="flex flex-col"> */}
       <Navbar />
 
       <Routes>
@@ -19,7 +20,8 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
 
-      {/* <Footer /> */}
+      <Footer />
+      {/* </div> */}
     </BrowserRouter>
   );
 }
