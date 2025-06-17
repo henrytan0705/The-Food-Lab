@@ -16,7 +16,7 @@ const HomePage = () => {
     },
     {
       src: Chicken,
-      alt: "Sous-Vide FriedChicken",
+      alt: "Sous-Vide Fried Chicken",
     },
     {
       src: Tartare,
