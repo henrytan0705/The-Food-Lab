@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../components/Hero";
-import MenuImage from "../assets/images/menu.jpg";
+import MenuImage from "../assets/images/heroes/menu.jpg";
 
 const MenuPage = () => {
   const menu = {

@@ -49,25 +49,25 @@ const Navbar = () => {
               to="/"
               className="text-gray-700 hover:text-red-500 transition"
             >
-              ᕼOᗰE
+              Home
             </Link>
             <Link
               to="/about"
               className="text-gray-700 hover:text-red-500 transition"
             >
-              ᗩᗷOᑌT
+              About
             </Link>
             <Link
               to="/menu"
               className="text-gray-700 hover:text-red-500 transition"
             >
-              ᗰEᑎᑌ
+              Menu
             </Link>
             <Link
               to="/contact"
               className="text-gray-700 hover:text-red-500 transition"
             >
-              ᑕOᑎTᗩᑕT
+              Contact
             </Link>
           </div>
         </div>
@@ -78,25 +78,25 @@ const Navbar = () => {
               to="/"
               className="block text-gray-700 hover:text-red-500 transition"
             >
-              ᕼOᗰE
+              Home
             </Link>
             <Link
               to="/about"
               className="block text-gray-700 hover:text-red-500 transition"
             >
-              ᗩᗷOᑌT
+              About
             </Link>
             <Link
               to="/menu"
               className="block text-gray-700 hover:text-red-500 transition"
             >
-              ᗰEᑎᑌ
+              Menu
             </Link>
             <Link
               to="/contact"
               className="block text-gray-700 hover:text-red-500 transition"
             >
-              ᑕOᑎTᗩᑕT
+              Contact
             </Link>
           </div>
         )}
