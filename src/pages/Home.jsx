@@ -1,12 +1,12 @@
 import React from "react";
 import Hero from "../components/Hero";
 import HomeImage from "../assets/images/heroes/home.jpg";
-import Fries from "../assets/images/gallery/Fries.jpg";
-import Tartare from "../assets/images/gallery/Tartare.jpg";
-import Carbonara from "../assets/images/gallery/Carbonara.jpg";
-import Bibimbamp from "../assets/images/gallery/Bibimbap.jpg";
-import Cake from "../assets/images/gallery/Cake.jpg";
-import Chicken from "../assets/images/gallery/Chicken.jpg";
+import Fries from "../assets/images/gallery/fries.jpg";
+import Tartare from "../assets/images/gallery/tartare.jpg";
+import Chicken from "../assets/images/gallery/chicken.jpg";
+import Carbonara from "../assets/images/gallery/carbonara.jpg";
+import Bibimbamp from "../assets/images/gallery/bibimbap.jpg";
+import Cake from "../assets/images/gallery/cake.jpg";
 
 const HomePage = () => {
   const galleryItems = [
