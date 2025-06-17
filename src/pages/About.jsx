@@ -1,11 +1,11 @@
 import React from "react";
 import Hero from "../components/Hero";
-import HomeImage from "../assets/images/heroes/home.jpg";
+import AboutImage from "../assets/images/heroes/about.jpg";
 
 const AboutPage = () => {
   return (
     <div className="w-screen">
-      <Hero src={HomeImage}>
+      <Hero src={AboutImage}>
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
           ᗩᗷOᑌT
         </h1>
