@@ -37,7 +37,7 @@ const CartDrawer = ({ cartItems, setCartItems }) => {
     <>
       <div
         onClick={() => setIsOpen(true)}
-        className="flex items-center gap-2 text-[#646cff] cursor-pointer focus:outline-none font-medium hover:text-[#535bf2]"
+        className="flex items-center gap-2 text-[#646cff] cursor-pointer focus:outline-none font-medium hover:text-[#535bf2] justify-end"
         aria-label="Open cart drawer"
       >
         Cart
@@ -65,7 +65,10 @@ const CartDrawer = ({ cartItems, setCartItems }) => {
             </div>
 
             {cartItems.length === 0 ? (
-              <p>No items in cart. Please add something from the menu.</p>
+              <p>
+                Your cart is currently empty. Please add something from the
+                menu.
+              </p>
             ) : (
               <ul className="menu space-y-3">
                 {cartItems.map((item, idx) => (
