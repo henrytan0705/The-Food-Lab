@@ -2,59 +2,89 @@ import React from "react";
 import Hero from "../components/Hero";
 import MenuImage from "../assets/images/heroes/menu.jpg";
 
-const MenuPage = () => {
+const MenuPage = ({ cartItems, setCartItems }) => {
   const menu = {
     Appetizers: [
       {
         name: "Charred Edamame",
         description: "Miso butter, sea salt",
-        price: "$9",
+        price: 9,
       },
       {
         name: "Lab Fries",
         description: "Truffle oil, parmesan, aioli",
-        price: "$11",
+        price: 11,
       },
       {
         name: "Tuna Tartare",
         description: "Avocado, soy pearls, wonton crisps",
-        price: "$14",
+        price: 14,
       },
     ],
     Mains: [
       {
         name: "Sous-Vide Fried Chicken",
         description: "Hot honey glaze, sweet slaw",
-        price: "$24",
+        price: 24,
       },
       {
         name: "Ramen Carbonara",
         description: "Smoked pancetta, egg yolk cream",
-        price: "$22",
+        price: 22,
       },
       {
         name: "Impossible Bibimbap",
         description: "Plant-based, gochujang rice bowl",
-        price: "$20",
+        price: 20,
       },
     ],
     Desserts: [
       {
         name: "Matcha Lava Cake",
         description: "With white chocolate core",
-        price: "$10",
+        price: 10,
       },
       {
         name: "Nitro Ice Cream",
         description: "Vanilla bean flash-frozen at your table",
-        price: "$12",
+        price: 12,
       },
       {
         name: "Ube Cheesecake",
         description: "Purple yam, coconut crumble",
-        price: "$11",
+        price: 11,
       },
     ],
+  };
+
+  const handleItemClick = (item) => {
+    const itemInCart = cartItems.find(
+      (cartItem) => cartItem.name === item.name
+    );
+
+    if (itemInCart) {
+      const newCartList = cartItems.map((cartItem) => {
+        if (cartItem.name === item.name) {
+          return {
+            name: item.name,
+            quantity: cartItem.quantity + 1,
+            price: cartItem.price,
+          };
+        } else {
+          return cartItem;
+        }
+      });
+      setCartItems(newCartList);
+    } else {
+      setCartItems([
+        ...cartItems,
+        {
+          name: item.name,
+          quantity: 1,
+          price: item.price,
+        },
+      ]);
+    }
   };
 
   return (
@@ -75,7 +105,11 @@ const MenuPage = () => {
               <table className="w-full text-left border-separate border-spacing-y-4">
                 <tbody>
                   {items.map((item, index) => (
-                    <tr key={index} className="border-b border-gray-200">
+                    <tr
+                      key={index}
+                      className="border-b border-gray-200 hover:bg-amber-600 hover:cursor-pointer"
+                      onClick={() => handleItemClick(item)}
+                    >
                       <td className="font-semibold pr-4">
                         {item.name}{" "}
                         <span className="text-gray-600">
@@ -83,7 +117,7 @@ const MenuPage = () => {
                         </span>
                       </td>
                       <td className="text-right font-medium text-gray-800">
-                        {item.price}
+                        ${item.price}
                       </td>
                     </tr>
                   ))}

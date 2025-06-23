@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router";
+import { useState } from "react";
 import "./App.css";
 import HomePage from "./pages/Home";
 import AboutPage from "./pages/About";
@@ -8,20 +9,25 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
   return (
     <BrowserRouter>
-      {/* <div className="flex flex-col"> */}
-      <Navbar />
+      <Navbar cartItems={cartItems} setCartItems={setCartItems} />
 
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/menu" element={<MenuPage />} />
+        <Route
+          path="/menu"
+          element={
+            <MenuPage cartItems={cartItems} setCartItems={setCartItems} />
+          }
+        />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
 
       <Footer />
-      {/* </div> */}
     </BrowserRouter>
   );
 }

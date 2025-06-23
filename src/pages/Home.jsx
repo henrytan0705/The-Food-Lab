@@ -47,7 +47,7 @@ const HomePage = () => {
       <section className="bg-white text-gray-800 px-6 py-16 sm:px-10 lg:px-20">
         <div className="carousel carousel-center rounded-box">
           {galleryItems.map(({ src, alt }) => (
-            <div className="carousel-item max-h-96 max-w-96">
+            <div key={alt} className="carousel-item max-h-96 max-w-96">
               <img src={src} alt={alt} />
             </div>
           ))}

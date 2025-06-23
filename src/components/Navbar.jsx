@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
+import CartDrawer from "./CartDrawer";
 
-const Navbar = () => {
+const Navbar = ({ cartItems, setCartItems }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -69,6 +70,7 @@ const Navbar = () => {
             >
               Contact
             </Link>
+            <CartDrawer cartItems={cartItems} setCartItems={setCartItems} />
           </div>
         </div>
 
@@ -98,6 +100,7 @@ const Navbar = () => {
             >
               Contact
             </Link>
+            <CartDrawer cartItems={cartItems} setCartItems={setCartItems} />
           </div>
         )}
       </div>
