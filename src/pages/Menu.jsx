@@ -64,15 +64,12 @@ const MenuPage = ({ cartItems, setCartItems }) => {
 
     if (itemInCart) {
       const newCartList = cartItems.map((cartItem) => {
-        if (cartItem.name === item.name) {
-          return {
-            name: item.name,
-            quantity: cartItem.quantity + 1,
-            price: cartItem.price,
-          };
-        } else {
-          return cartItem;
-        }
+        if (cartItem.name !== item.name) return cartItem;
+
+        return {
+          ...cartItem,
+          quantity: cartItem.quantity + 1,
+        };
       });
       setCartItems(newCartList);
     } else {
@@ -105,19 +102,24 @@ const MenuPage = ({ cartItems, setCartItems }) => {
               <table className="w-full text-left border-separate border-spacing-y-4">
                 <tbody>
                   {items.map((item, index) => (
-                    <tr
-                      key={index}
-                      className="border-b border-gray-200 hover:bg-amber-600 hover:cursor-pointer"
-                      onClick={() => handleItemClick(item)}
-                    >
+                    <tr key={index} className="border-b border-gray-200">
                       <td className="font-semibold pr-4">
                         {item.name}{" "}
                         <span className="text-gray-600">
                           - ({item.description})
                         </span>
                       </td>
-                      <td className="text-right font-medium text-gray-800">
-                        ${item.price}
+
+                      <td className="text-right font-medium text-gray-800 ">
+                        <span className="mr-3">${item.price}</span>
+                        <span>
+                          <div
+                            className="btn btn-xs hover:bg-primary"
+                            onClick={() => handleItemClick(item)}
+                          >
+                            Add
+                          </div>
+                        </span>
                       </td>
                     </tr>
                   ))}

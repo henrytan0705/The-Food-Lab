@@ -19,6 +19,30 @@ const CartDrawer = ({ cartItems, setCartItems }) => {
     setCartItems(newCartList);
   };
 
+  const handleQuantityChange = (item, increment) => {
+    const itemInCart = cartItems.find(
+      (cartItem) => cartItem.name === item.name
+    );
+
+    if (itemInCart.quantity === 1 && !increment) {
+      handleRemove(item);
+      return;
+    }
+
+    const newCartList = cartItems.map((cartItem) => {
+      if (cartItem.name !== item.name) return cartItem;
+
+      const updatedQuantity = cartItem.quantity + (increment ? 1 : -1);
+
+      return {
+        ...cartItem,
+        quantity: updatedQuantity,
+      };
+    });
+
+    setCartItems(newCartList);
+  };
+
   // update cart information whenever change is deteced in cart items list
   useEffect(() => {
     const totalCost = cartItems.reduce((acc, currItem) => {
@@ -70,22 +94,43 @@ const CartDrawer = ({ cartItems, setCartItems }) => {
                 menu.
               </p>
             ) : (
-              <ul className="menu space-y-3">
+              <ul className="menu space-y-3 w-full">
                 {cartItems.map((item, idx) => (
                   <li
                     key={idx}
                     className="flex justify-between items-center border-b border-gray-300 pb-2"
                   >
                     <span className="font-medium">{item.name}</span>
-                    <div className="flex items-center gap-4 text-sm">
-                      <span>Qty: {item.quantity}</span>
-                      <span>Cost: ${item.quantity * item.price}</span>
-                      <button
-                        className="btn btn-xs bg-red-500 hover:bg-red-600 focus:outline-none"
-                        onClick={() => handleRemove(item)}
-                      >
-                        Remove
-                      </button>
+                    <div className="flex flex-col">
+                      <div className="flex items-center gap-4 text-sm">
+                        <span>Qty: {item.quantity}</span>
+                        <span>Cost: ${item.quantity * item.price}</span>
+                      </div>
+
+                      <div className="flex items-center gap-4 text-sm">
+                        <button
+                          className="btn btn-xs hover:bg-red-500"
+                          onClick={() => {
+                            handleQuantityChange(item, false);
+                          }}
+                        >
+                          -
+                        </button>
+                        <button
+                          className="btn btn-xs hover:bg-green-500"
+                          onClick={() => {
+                            handleQuantityChange(item, true);
+                          }}
+                        >
+                          +
+                        </button>
+                        <button
+                          className="btn btn-xs bg-red-500 hover:bg-red-600 focus:outline-none"
+                          onClick={() => handleRemove(item)}
+                        >
+                          Remove
+                        </button>
+                      </div>
                     </div>
                   </li>
                 ))}
